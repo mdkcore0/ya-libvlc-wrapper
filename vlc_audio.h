@@ -50,6 +50,8 @@ namespace vlc
         libvlc_audio_output_channel_t get_channel();
         void set_channel( libvlc_audio_output_channel_t );
 
+        void set_audio_device( const char * audio_device );
+
     private:
         vlc::basic_player& _player;
     };

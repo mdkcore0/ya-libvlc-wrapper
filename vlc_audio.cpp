@@ -123,3 +123,10 @@ void audio::set_channel( libvlc_audio_output_channel_t channel )
     if( _player.is_open() )
         libvlc_audio_set_channel( _player.get_mp(), channel );
 }
+
+void audio::set_audio_device( const char * audio_device )
+{
+    if( _player.is_open() )
+        // XXX hardcoding "alsa" as audio module; NULL should have worked :/
+        libvlc_audio_output_device_set( _player.get_mp(), "alsa", audio_device);
+}
